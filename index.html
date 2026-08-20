@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAULT86 — Симулятор кейсов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="ambientCanvas"></canvas>
+<div class="screen-flash" id="screenFlash"></div>
+<div class="confetti-layer" id="confettiLayer"></div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="mark"><span>V</span></div>
+      VAULT86 <span class="sub">// case sim</span>
+    </div>
+    <div class="balance">
+      <span class="lbl">Баланс</span>
+      <span class="amt" id="balanceAmt">0</span>
+    </div>
+  </div>
+</div>
+
+<div class="ticker-wrap">
+  <div class="ticker" id="ticker"></div>
+</div>
+
+<div class="hero">
+  <div>
+    <div class="hero-eyebrow">Симуляция — без реальных ставок</div>
+    <h1 class="glitch-target">Открывай кейсы.<br>Забирай <em>редкость</em>.</h1>
+    <p>Учебная симуляция механики открытия кейсов вроде тех, что стоят за витриной CS2 — свои кейсы, свои предметы, честные шансы, показанные прямо здесь. Никаких реальных денег.</p>
+  </div>
+  <div class="odds-panel">
+    <div class="title"><span>Таблица шансов</span><span>ОБЩАЯ</span></div>
+    <div id="oddsTable"></div>
+  </div>
+</div>
+
+<div class="section-head">
+  <h2><span class="num">01</span>Выбери кейс</h2>
+  <span class="note">4 кейса · разная стоимость и предметы</span>
+</div>
+<div class="case-grid" id="caseGrid"></div>
+
+<div class="reel-zone">
+  <div class="reel-frame" id="reelFrame">
+    <div class="pointer"></div>
+    <div class="fade-l"></div>
+    <div class="fade-r"></div>
+    <div class="reel-strip" id="reelStrip"></div>
+    <div class="reel-flash" id="reelFlash"></div>
+  </div>
+</div>
+
+<div class="section-head">
+  <h2><span class="num">02</span>Инвентарь</h2>
+  <span class="note" id="invCount">0 предметов</span>
+</div>
+<div class="inv-grid" id="invGrid">
+  <div class="inv-empty">Пусто. Открой кейс, чтобы получить первый предмет.</div>
+</div>
+
+<footer>
+  <span>VAULT86 — демонстрационный проект</span>
+  <span>Все предметы вымышлены</span>
+</footer>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="result-card" id="resultCard">
+    <div class="tier-strip" id="resultStrip"></div>
+    <div class="rarity-lbl" id="resultRarity"></div>
+    <div class="art-wrap">
+      <div class="glow" id="resultGlow"></div>
+      <div class="rays" id="resultRays"></div>
+      <div class="art" id="resultArt"></div>
+    </div>
+    <h3 id="resultName"></h3>
+    <div class="finish" id="resultFinish"></div>
+    <div class="value" id="resultValue"></div>
+    <div class="btn-row">
+      <button class="btn" id="sellBtn">Продать</button>
+      <button class="btn primary" id="keepBtn">Забрать</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
